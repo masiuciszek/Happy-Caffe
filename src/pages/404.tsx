@@ -4,10 +4,11 @@ import SEO from '../components/seo';
 import { PageWrapper } from '../components/styles/PageWrapper';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
+import { StyledBtn } from '../components/styles/Buttons';
 
 const Styled404 = styled.section`
   padding: 3rem 0;
-  width: 40rem;
+  max-width: 40rem;
   margin: 0 auto;
   h1 {
     background: ${({ theme }) => theme.colors.blackShadow};
@@ -16,6 +17,7 @@ const Styled404 = styled.section`
     color: ${({ theme }) => theme.colors.white};
     box-shadow: ${({ theme }) => theme.shadow.lightShadow};
     font-size: 2.4rem;
+    border: 2px solid ${({ theme }) => theme.colors.darkGrey};
   }
   p {
     font-size: 1.4rem;
@@ -29,7 +31,9 @@ const NotFoundPage = () => (
       <Styled404>
         <h1>Ooop's Page Not found!</h1>
         <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
-        <Link to="/">Back ←</Link>
+        <Link to="/">
+          <StyledBtn>Back ← </StyledBtn>{' '}
+        </Link>
       </Styled404>
     </PageWrapper>
   </Layout>

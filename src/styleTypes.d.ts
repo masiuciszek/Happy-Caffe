@@ -12,7 +12,7 @@ declare module 'styled-components' {
     colors: {
       secondary: string;
       blackShadow: string;
-      darkishGreen: string;
+      darkish: string;
       danger: string;
       offWhite: string;
       primaryColor: string;
@@ -23,6 +23,8 @@ declare module 'styled-components' {
       dark: string;
       darkGrey: string;
       black: string;
+      shark: string;
+      coffee: string;
     };
     size: {
       maxWidth: string;

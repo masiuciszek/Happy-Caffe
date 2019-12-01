@@ -11,9 +11,8 @@ interface Props {}
 const StyledNav = styled.nav`
   padding: 0.5rem;
   position: relative;
-  background: ${({ theme }) => theme.colors.white};
+  background: ${({ theme }) => theme.colors.offWhite};
   .logo {
-    border: 2px solid red;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -50,26 +49,26 @@ const StyledNav = styled.nav`
 
 const NavList = styled.ul`
   padding: 0.5rem 0;
-  border: 2px solid blue;
   justify-content: center;
   display: none;
   @media (min-width: 615px) {
     display: flex;
   }
   li {
-    padding: 0.6rem;
+    padding: 0.2rem;
     transition: ${({ theme }) => theme.transition.quickTransition};
     &:hover {
       transform: scale(1.07);
-      background: ${({ theme }) => theme.colors.black};
       color: ${({ theme }) => theme.colors.white};
     }
     a {
       color: ${({ theme }) => theme.colors.black};
       font-size: 1.3rem;
       letter-spacing: 0.1rem;
+      padding: 0.6rem;
       transition: ${({ theme }) => theme.transition.quickTransition};
       &:hover {
+        background: ${({ theme }) => theme.colors.black};
         border-bottom: 2px solid ${({ theme }) => theme.colors.white};
         color: ${({ theme }) => theme.colors.white};
       }
@@ -81,6 +80,15 @@ const MobileList = styled(NavList)`
   display: flex;
   flex-direction: column;
   animation: ${fadeDown} 300ms ease-in-out;
+  justify-content: center;
+  align-items: center;
+  li {
+    a {
+      &:hover {
+        transform: translateY(200px);
+      }
+    }
+  }
   @media (min-width: 615px) {
     display: none;
   }
