@@ -27,7 +27,7 @@ const theme: DefaultTheme = {
     mainSpacing: '4px',
   },
   transition: {
-    mainTransition: 'all 0.3s linear',
+    mainTransition: 'all 0.3s ease-in-out',
     secondaryTransition: 'all 0.3s ease-in-out',
     quickTransition: 'all 200ms ease-in-out',
   },

@@ -3,7 +3,7 @@ import { ThemeProvider } from 'styled-components';
 import { useStaticQuery, graphql } from 'gatsby';
 
 interface P {
-  children: React.ReactNode;
+  children: React.ReactNode | React.ReactFragment;
   data: {
     site: {
       siteMetadata: {
