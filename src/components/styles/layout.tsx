@@ -1,7 +1,9 @@
 import * as React from 'react';
 import { ThemeProvider } from 'styled-components';
 import { useStaticQuery, graphql } from 'gatsby';
-
+import theme from './theme';
+import GlobalStyles from './GlobalStyles';
+import Navbar from './Navbar';
 interface P {
   children: React.ReactNode | React.ReactFragment;
   data: {
@@ -13,10 +15,6 @@ interface P {
   };
 }
 
-import theme from './theme';
-import GlobalStyles from './GlobalStyles';
-import Navbar from './Navbar';
-
 const Layout: React.FC<P> = ({ children }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -27,7 +25,7 @@ const Layout: React.FC<P> = ({ children }) => {
       }
     }
   `);
-  console.log(data.site.siteMetadata.title);
+
   return (
     <>
       <ThemeProvider theme={theme}>
