@@ -1,15 +1,14 @@
 import { createGlobalStyle } from 'styled-components';
 
 export default createGlobalStyle`
-@import url('https://fonts.googleapis.com/css?family=Nunito:300,300i,400,400i,600,600i,700,700i&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Bebas+Neue|Work+Sans:300,400,500,600,700,800,900&display=swap');
 *::before,*::after,*{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 body {
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Bebas Neue', cursive;
   color: ${props => props.theme.colors.mainBlack};
   background: ${props => props.theme.colors.white};
   line-height: 1.4;
@@ -24,12 +23,13 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Bebas Neue', cursive;
   margin-bottom: 1.25rem;
   letter-spacing: ${props => props.theme.size.mainSpacing};
 }
 p {
   margin-bottom: 1.25rem;
+  font-family: 'Work Sans', sans-serif;
 }
 a {
   text-decoration: none;
