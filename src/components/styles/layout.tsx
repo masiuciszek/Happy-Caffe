@@ -4,10 +4,18 @@ import { useStaticQuery, graphql } from 'gatsby';
 
 interface P {
   children: React.ReactNode;
+  data: {
+    site: {
+      siteMetadata: {
+        title: string;
+      };
+    };
+  };
 }
 
 import theme from './theme';
 import GlobalStyles from './GlobalStyles';
+import Navbar from './Navbar';
 
 const Layout: React.FC<P> = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -19,15 +27,16 @@ const Layout: React.FC<P> = ({ children }) => {
       }
     }
   `);
-
+  console.log(data.site.siteMetadata.title);
   return (
     <>
       <ThemeProvider theme={theme}>
         <GlobalStyles />
-        <>
-          <main>{children}</main>
-          <footer>© {new Date().getFullYear()}, Built with</footer>
-        </>
+        <Navbar />
+        <main>{children}</main>
+        <footer>
+          © {new Date().getFullYear()}, {data.site.siteMetadata.title}{' '}
+        </footer>
       </ThemeProvider>
     </>
   );
