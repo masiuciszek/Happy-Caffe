@@ -9,12 +9,20 @@ interface Props {
 }
 
 const StyledGrid = styled.div`
-  /*  */
+  padding: 4rem 0.5rem;
+  display: grid;
+  /* TODO:Delete this */
+  border: 2px solid red;
+  grid-gap: 16px;
+  justify-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+  @media (min-width: 1360px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
 `;
 
 const Menu: React.FC<Props> = ({ menuData }) => {
   let a;
-  console.log(menuData);
   return (
     <StyledGrid>
       {' '}

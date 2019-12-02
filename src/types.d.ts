@@ -2,6 +2,6 @@ export type MenuItemType = {
   id: string;
   title: string;
   description: { description: string };
-  iamge: { src: string };
+  iamge: { fixed: { src: string } };
   price: number;
 };

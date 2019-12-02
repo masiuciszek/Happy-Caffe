@@ -4,18 +4,13 @@ import Layout from '../components/styles/layout';
 import Title from '../components/styles/Title';
 import { PageWrapper } from '../components/styles/PageWrapper';
 import Menu from '../components/menu/Menu';
+import { MenuItemType } from '../types';
 
 interface Props {
   data: {
     menu: {
       edges: {
-        node: {
-          price: number;
-          id: string;
-          iamge: { src: string };
-          title: string;
-          description: { description: string };
-        };
+        node: MenuItemType;
       }[];
     };
   };
@@ -47,7 +42,7 @@ export const pageQuery = graphql`
           }
           catecory
           iamge {
-            fixed(width: 50, height: 50) {
+            fixed(width: 90, height: 90) {
               src
             }
           }
