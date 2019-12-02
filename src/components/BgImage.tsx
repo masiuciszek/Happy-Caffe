@@ -15,7 +15,8 @@ const StyledBg = styled.section`
   position: relative;
   background: rgb(2, 0, 36);
   z-index: 2;
-  .mainBg {
+  .mainBg,
+  .mainBg2 {
     min-height: ${({ page }) => (page ? `calc(69vh - 62px)` : '30vh')};
     background-attachment: fixed;
     background-position: center;
@@ -27,6 +28,14 @@ const StyledBg = styled.section`
       rgba(2, 0, 36, 0.3671043417366946) 16%,
       rgba(152, 66, 10, 0.239093137254902) 40%,
       rgba(121, 56, 14, 0.3998774509803921) 100%
+    );
+  }
+  .mainBg2 {
+    background: linear-gradient(
+      90deg,
+      rgba(2, 0, 36, 0.1671043417366946) 16%,
+      rgba(152, 66, 10, 0.139093137254902) 40%,
+      rgba(121, 56, 14, 0.2998774509803921) 100%
     );
   }
   .ImageContent {

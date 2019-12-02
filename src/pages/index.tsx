@@ -1,7 +1,6 @@
 import React from 'react';
 import Layout from '../components/styles/layout';
 import SEO from '../components/seo';
-import { PageWrapper } from '../components/styles/PageWrapper';
 import { graphql } from 'gatsby';
 import BgImage from '../components/BgImage';
 import { StyledBtn } from '../components/styles/Buttons';
@@ -41,7 +40,7 @@ const IndexPage: React.FC<IndexProps> = ({ data }) => {
 };
 export const pageQuery = graphql`
   query {
-    img: file(relativePath: { eq: "img2.jpg" }) {
+    img: file(relativePath: { eq: "img3.jpg" }) {
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid_tracedSVG
