@@ -2,8 +2,8 @@ import * as React from 'react';
 import styled from 'styled-components';
 
 interface Props {
-  title: string;
-  subTitle: string;
+  title?: string;
+  subTitle?: string;
 }
 
 const StyledTitle = styled.section`

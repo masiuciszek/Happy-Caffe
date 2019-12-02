@@ -3,8 +3,6 @@ import { graphql } from 'gatsby';
 import Layout from '../components/styles/layout';
 import Title from '../components/styles/Title';
 import { PageWrapper } from '../components/styles/PageWrapper';
-import Img from 'gatsby-image';
-import styled from 'styled-components';
 import Menu from '../components/menu/Menu';
 
 interface Props {
@@ -24,8 +22,6 @@ interface Props {
 }
 
 const MenuPage: React.FC<Props> = ({ data }) => {
-  let a;
-
   return (
     <>
       <Layout>
