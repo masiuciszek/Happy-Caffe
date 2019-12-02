@@ -47,7 +47,7 @@ const StyledNav = styled.nav`
   }
 `;
 
-const NavList = styled.ul`
+export const NavList = styled.ul`
   padding: 0.5rem 0;
   justify-content: center;
   display: none;

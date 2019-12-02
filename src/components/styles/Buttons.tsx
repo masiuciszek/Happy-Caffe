@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 
-export const StyledBtn = styled.button`
+interface P {
+  upper: boolean;
+}
+
+export const StyledBtn = styled.button<P>`
   padding: 0.3rem 0.6rem;
   font-size: 1.1rem;
   border: 2px solid ${({ theme }) => theme.colors.secondary};
@@ -13,4 +17,5 @@ export const StyledBtn = styled.button`
     color: ${({ theme }) => theme.colors.white};
     box-shadow: ${({ theme }) => theme.shadow.darkShadow};
   }
+  text-transform: ${({ upper }) => upper && 'uppercase'};
 `;

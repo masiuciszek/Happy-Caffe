@@ -10,6 +10,8 @@ const Styled404 = styled.section`
   padding: 3rem 0;
   max-width: 40rem;
   margin: 0 auto;
+
+  min-height: 71vh;
   h1 {
     background: ${({ theme }) => theme.colors.blackShadow};
     padding: 1rem 0.4rem;

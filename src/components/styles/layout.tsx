@@ -4,6 +4,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import theme from './theme';
 import GlobalStyles from './GlobalStyles';
 import Navbar from './Navbar';
+import Footer from './Footer';
 interface P {
   children: React.ReactNode | React.ReactFragment;
   data: {
@@ -32,9 +33,7 @@ const Layout: React.FC<P> = ({ children }) => {
         <GlobalStyles />
         <Navbar />
         <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, {data.site.siteMetadata.title}{' '}
-        </footer>
+        <Footer title={data.site.siteMetadata.title} />
       </ThemeProvider>
     </>
   );

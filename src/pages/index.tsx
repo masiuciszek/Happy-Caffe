@@ -5,6 +5,7 @@ import { PageWrapper } from '../components/styles/PageWrapper';
 import { graphql } from 'gatsby';
 import BgImage from '../components/BgImage';
 import { StyledBtn } from '../components/styles/Buttons';
+import Info from '../components/home/Info';
 
 interface IndexProps {
   data: {
@@ -28,15 +29,19 @@ const IndexPage: React.FC<IndexProps> = ({ data }) => {
         imageData={data.img.childImageSharp.fluid}
         styleClass="mainBg"
         title="Happy Caffe"
+        subTitle="From the best organic coffee to delicious cakes,
+        tasty sandwitches and lots of plugs!"
+        page
       >
-        <StyledBtn>Menu</StyledBtn>
+        <StyledBtn upper>Menu</StyledBtn>
       </BgImage>
+      <Info />
     </Layout>
   );
 };
 export const pageQuery = graphql`
   query {
-    img: file(relativePath: { eq: "img1.jpg" }) {
+    img: file(relativePath: { eq: "img2.jpg" }) {
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid_tracedSVG
