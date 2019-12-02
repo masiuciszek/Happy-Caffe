@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 interface Props {
   title: string;
+  subTitle: string;
 }
 
 const StyledTitle = styled.section`
@@ -13,11 +14,12 @@ const StyledTitle = styled.section`
   }
 `;
 
-const Title: React.FC<Props> = ({ title }) => {
+const Title: React.FC<Props> = ({ title, subTitle }) => {
   let a;
   return (
     <StyledTitle>
       <h3> {title} </h3>
+      <h5> {subTitle} </h5>
     </StyledTitle>
   );
 };

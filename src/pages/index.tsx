@@ -20,7 +20,7 @@ interface IndexProps {
   };
 }
 
-const IndexPage: React.FC<IndexProps> = ({ data }) => {
+const IndexPage: React.FC<IndexProps> = ({ data }): JSX.Element => {
   return (
     <Layout>
       <SEO title="Home" />

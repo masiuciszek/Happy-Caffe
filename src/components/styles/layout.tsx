@@ -16,7 +16,7 @@ interface P {
   };
 }
 
-const Layout: React.FC<P> = ({ children }) => {
+const Layout: React.FC<P> = ({ children }): JSX.Element => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
