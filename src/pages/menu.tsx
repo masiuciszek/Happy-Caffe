@@ -6,26 +6,19 @@ import { PageWrapper } from '../components/styles/PageWrapper';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
 import Menu from '../components/menu/Menu';
+import { MenuItemType } from '../types';
 
 interface Props {
   data: {
     menu: {
       edges: {
-        node: {
-          price: number;
-          id: string;
-          iamge: { src: string };
-          title: string;
-          description: { description: string };
-        };
+        node: MenuItemType;
       }[];
     };
   };
 }
 
 const MenuPage: React.FC<Props> = ({ data }) => {
-  let a;
-
   return (
     <>
       <Layout>
@@ -51,7 +44,7 @@ export const pageQuery = graphql`
           }
           catecory
           iamge {
-            fixed(width: 50, height: 50) {
+            fixed(width: 90, height: 90) {
               src
             }
           }
