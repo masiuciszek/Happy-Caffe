@@ -19,3 +19,13 @@ export const StyledBtn = styled.button<P>`
   }
   text-transform: ${({ upper }) => upper && 'uppercase'};
 `;
+
+export const SecondaryBtn = styled(StyledBtn)`
+  background: ${({ theme }) => theme.colors.shark};
+  color: ${({ theme }) => theme.colors.white};
+  letter-spacing: 0.1rem;
+  position: relative;
+  &:active {
+    top: 0.2rem;
+  }
+`;

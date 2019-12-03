@@ -4,6 +4,7 @@ import BgImage from '../components/BgImage';
 import { StyledBtn } from '../components/styles/Buttons';
 import Layout from '../components/styles/layout';
 import SEO from '../components/seo';
+import About from '../components/about/About';
 
 interface Props {
   data: {
@@ -20,8 +21,6 @@ interface Props {
 }
 
 const AboutPage: React.FC<Props> = ({ data }) => {
-  let a;
-  console.log(data);
   return (
     <Layout>
       {' '}
@@ -34,6 +33,7 @@ const AboutPage: React.FC<Props> = ({ data }) => {
         Bangkok to have enough plugs..."
         page
       ></BgImage>
+      <About />
     </Layout>
   );
 };

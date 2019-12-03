@@ -16,6 +16,7 @@ interface Props {
       }[];
     };
   };
+  // data: any;
 }
 
 const MenuPage: React.FC<Props> = ({ data }) => {
