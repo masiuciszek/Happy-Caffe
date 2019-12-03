@@ -4,4 +4,5 @@ export type MenuItemType = {
   description: { description: string };
   iamge: { fixed: { src: string } };
   price: number;
+  catecory: string;
 };
