@@ -47,7 +47,7 @@ const Categories = styled.section`
 const Menu: React.FC<Props> = ({ menuData }) => {
   const [categories, setCategories] = React.useState([]);
   const [items, setItmes] = React.useState<MenuItemType[]>(menuData);
-  const [coffeItems, setCoffeeItems] = React.useState(menuData);
+  const [coffeeItems, setCoffeeItems] = React.useState(menuData);
 
   React.useEffect(() => {
     const categoriesArr = menuData.map(x => x.node.catecory);
@@ -62,12 +62,12 @@ const Menu: React.FC<Props> = ({ menuData }) => {
   const handleItems = (value: string): void => {
     const tempItems: MenuItemType[] = [...items];
     if (value === 'all') {
-      setCoffeeItems<React.SetStateAction<string>>(tempItems);
+      coffeeItems<React.SetStateAction<string>>(tempItems);
     } else {
       const filteredItems: MenuItemType[] = tempItems.filter(
         val => val.catecory === value
       );
-      setCoffeeItems<React.SetStateAction<string>>(filteredItems);
+      coffeeItems<React.SetStateAction<string>>(filteredItems);
     }
   };
 
@@ -87,7 +87,7 @@ const Menu: React.FC<Props> = ({ menuData }) => {
       </Categories>
       <StyledGrid>
         {' '}
-        {coffeItems.map((item: MenuItemType) => (
+        {coffeeItems.map((item: MenuItemType) => (
           <MenuItem key={item.node.id} item={item.node} />
         ))}{' '}
       </StyledGrid>
