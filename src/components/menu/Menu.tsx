@@ -62,13 +62,15 @@ const Menu: React.FC<Props> = ({ menuData }) => {
   const handleItems = (value: string): void => {
     const tempItems: MenuItemType[] = [...items];
     if (value === 'all') {
-      coffeeItems<React.SetStateAction<string>>(tempItems);
+      setCoffeeItems<React.SetStateAction<string>>(tempItems);
     } else {
       const filteredItems: MenuItemType[] = tempItems.filter(
-        val => val.catecory === value
+        val => val.node.catecory === value
       );
-      coffeeItems<React.SetStateAction<string>>(filteredItems);
+      setCoffeeItems<React.SetStateAction<string>>(filteredItems);
     }
+
+    // const apa = tempItems.forEach(x => console.log(x.node.catecory));
   };
 
   return (
