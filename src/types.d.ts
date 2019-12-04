@@ -6,3 +6,14 @@ export type MenuItemType = {
   price: number;
   catecory: string;
 };
+
+export type ProductType = {
+  id: string;
+  title: string;
+  price: number;
+  image: FluidImg;
+};
+
+export type FluidImg = {
+  src: string;
+};

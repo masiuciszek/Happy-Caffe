@@ -9,7 +9,11 @@ interface Props {
   // item: any;
 }
 
-const StyledMenuItem = styled.section`
+interface StyledProps {
+  category: string;
+}
+
+const StyledMenuItem = styled.section<StyledProps>`
   padding: 1rem 1.6rem;
   border: 1px solid ${({ theme }) => theme.colors.black};
   width: 25rem;
@@ -28,8 +32,13 @@ const StyledMenuItem = styled.section`
       position: absolute;
       bottom: 0;
       right: 1rem;
-      background: ${({ theme }) => theme.colors.primaryColor};
+      /* background: ${({ theme }) => theme.colors.primaryColor}; */
+      background: ${({ theme, category }) =>
+        (category.toLowerCase() === 'dessert' && theme.colors.primaryColor) ||
+        (category.toLowerCase() === 'coffee' && theme.colors.darkish) ||
+        theme.colors.darkGrey};
       color: ${({ theme }) => theme.colors.offWhite};
+
       box-shadow: ${({ theme }) => theme.shadow.lightShadow};
       padding: 0.3rem 0.5rem;
     }
@@ -58,7 +67,7 @@ const StyledMenuItem = styled.section`
 
 const MenuItem: React.FC<Props> = ({ item }) => {
   return (
-    <StyledMenuItem>
+    <StyledMenuItem category={item.catecory}>
       <div className="head">
         <div className="img-wrapper">
           <img src={item.iamge.fixed.src} alt="iamge" />

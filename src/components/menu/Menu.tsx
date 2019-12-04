@@ -8,7 +8,6 @@ interface Props {
   menuData: {
     node: MenuItemType;
   };
-  // menuData: any;
 }
 
 const StyledGrid = styled.div`
@@ -56,8 +55,6 @@ const Menu: React.FC<Props> = ({ menuData }) => {
 
     setCategories<React.SetStateAction<void[]>>(addToUnique);
   }, []);
-
-  console.log(categories);
 
   const handleItems = (value: string): void => {
     const tempItems: MenuItemType[] = [...items];

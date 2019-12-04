@@ -17,7 +17,7 @@ const StyledAbout = styled.section`
     width: 55rem;
     margin: 0 auto;
     article {
-      padding: 1rem 2rem;
+      padding: 2rem 3rem;
       box-shadow: ${({ theme }) => theme.shadow.lightShadow};
       font-size: 1.1rem;
       line-height: 1.9rem;

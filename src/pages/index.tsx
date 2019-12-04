@@ -5,6 +5,7 @@ import { graphql } from 'gatsby';
 import BgImage from '../components/BgImage';
 import { StyledBtn } from '../components/styles/Buttons';
 import Info from '../components/home/Info';
+import Products from '../components/home/Products';
 
 interface IndexProps {
   data: {
@@ -35,6 +36,7 @@ const IndexPage: React.FC<IndexProps> = ({ data }): JSX.Element => {
         <StyledBtn upper>Menu</StyledBtn>
       </BgImage>
       <Info />
+      <Products />
     </Layout>
   );
 };

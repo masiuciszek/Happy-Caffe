@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import BgImage from '../components/BgImage';
 import { StyledBtn } from '../components/styles/Buttons';
 import Layout from '../components/styles/layout';
@@ -32,7 +32,11 @@ const AboutPage: React.FC<Props> = ({ data }) => {
         subTitle="We are the first truly organic coffee shop in
         Bangkok to have enough plugs..."
         page
-      ></BgImage>
+      >
+        <Link to="/contact">
+          <StyledBtn>Contact</StyledBtn>
+        </Link>
+      </BgImage>
       <About />
     </Layout>
   );
