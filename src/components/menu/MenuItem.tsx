@@ -16,6 +16,7 @@ const StyledMenuItem = styled.section`
   height: 15rem;
   position: relative;
   box-shadow: ${({ theme }) => theme.shadow.lightShadow};
+
   .head {
     display: flex;
     justify-content: space-between;
@@ -24,8 +25,13 @@ const StyledMenuItem = styled.section`
   }
   .body {
     h4 {
-      margin-right: auto;
-      display: inline;
+      position: absolute;
+      bottom: 0;
+      right: 1rem;
+      background: ${({ theme }) => theme.colors.primaryColor};
+      color: ${({ theme }) => theme.colors.offWhite};
+      box-shadow: ${({ theme }) => theme.shadow.lightShadow};
+      padding: 0.3rem 0.5rem;
     }
     p {
       font-size: 1.1rem;
@@ -55,7 +61,7 @@ const MenuItem: React.FC<Props> = ({ item }) => {
     <StyledMenuItem>
       <div className="head">
         <div className="img-wrapper">
-          <img src={item.iamge.fixed.src} alt="" />
+          <img src={item.iamge.fixed.src} alt="iamge" />
           {/*<Img fixed={item.iamge.fixed} />*/}
         </div>
         <h3>
@@ -66,7 +72,6 @@ const MenuItem: React.FC<Props> = ({ item }) => {
       <div className="body">
         <h4>CateGorey: {item.catecory}</h4>
         <p>{item.description.description}</p>
-        <StyledBtn>Order</StyledBtn>
       </div>
     </StyledMenuItem>
   );

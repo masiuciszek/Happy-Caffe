@@ -45,23 +45,36 @@ const Categories = styled.section`
 `;
 
 const Menu: React.FC<Props> = ({ menuData }) => {
-  const [state, setstate] = React.useState([]);
+  const [categories, setCategories] = React.useState([]);
+  const [items, setItmes] = React.useState<MenuItemType[]>(menuData);
+  const [coffeItems, setCoffeeItems] = React.useState(menuData);
 
   React.useEffect(() => {
     const categoriesArr = menuData.map(x => x.node.catecory);
-    const uniqueValues = [...new Set(categoriesArr)];
-    setstate(uniqueValues);
+    const uniqueValues: string[] = [...new Set(categoriesArr)];
+    const addToUnique = ['all', ...uniqueValues];
+
+    setCategories<React.SetStateAction<void[]>>(addToUnique);
   }, []);
 
-  const handleItems = value => {
-    console.log(value);
+  console.log(categories);
+
+  const handleItems = (value: string): void => {
+    const tempItems: MenuItemType[] = [...items];
+    if (value === 'all') {
+      setCoffeeItems<React.SetStateAction<string>>(tempItems);
+    } else {
+      const filteredItems: MenuItemType[] = tempItems.filter(
+        val => val.catecory === value
+      );
+      setCoffeeItems<React.SetStateAction<string>>(filteredItems);
+    }
   };
 
   return (
     <>
       <Categories>
-        <SecondaryBtn id="all">All</SecondaryBtn>
-        {state.map((category: string, index: number) => (
+        {categories.map((category: string, index: number) => (
           <SecondaryBtn
             type="button"
             key={index}
@@ -74,7 +87,7 @@ const Menu: React.FC<Props> = ({ menuData }) => {
       </Categories>
       <StyledGrid>
         {' '}
-        {menuData.map((item: MenuItemType) => (
+        {coffeItems.map((item: MenuItemType) => (
           <MenuItem key={item.node.id} item={item.node} />
         ))}{' '}
       </StyledGrid>
