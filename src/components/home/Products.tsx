@@ -11,9 +11,19 @@ interface Props {
 }
 
 const StyledProducts = styled.section`
-  padding: 4rem 1rem;
-  /* TODO Delete */
-  border: 2px solid red;
+  padding: 4rem 2rem;
+
+  h3 {
+  }
+  h5 {
+    font-size: 1.7rem;
+  }
+  .grid {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-rows: auto;
+  }
 `;
 
 const GET_PRODUCTS_QUERY = graphql`
@@ -26,7 +36,7 @@ const GET_PRODUCTS_QUERY = graphql`
           price
           image {
             fluid(maxHeight: 426) {
-              src
+              ...GatsbyContentfulFluid
             }
           }
         }
@@ -41,14 +51,18 @@ const Products: React.FC<Props> = (): JSX.Element => {
       <StaticQuery
         query={GET_PRODUCTS_QUERY}
         render={data => {
-          console.log(data);
           return (
             <StyledProducts>
               {' '}
-              <Title title="Products" subTitle="Not just (A) kind of product" />
-              {data.products.edges.map(({ node }) => (
-                <Product key={node.id} product={node} />
-              ))}
+              <Title
+                title="Fancy Products"
+                subTitle="Not just (A) kind of product"
+              />
+              <div className="grid">
+                {data.products.edges.map(({ node }) => (
+                  <Product key={node.id} product={node} />
+                ))}
+              </div>
             </StyledProducts>
           );
         }}
