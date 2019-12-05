@@ -31,8 +31,7 @@ const FormGroup = styled.div`
 
 const StyledInput = styled.input`
   padding: 0.8rem 0.9rem;
-  width: 30rem;
-
+  width: 100%;
   box-shadow: ${({ theme }) => theme.shadow.lightShadow};
   border: 1px solid ${({ theme }) => theme.colors.black};
   border-radius: ${({ theme }) => theme.borderRadius};
@@ -43,10 +42,16 @@ const StyledInput = styled.input`
     width: 32rem;
     box-shadow: ${({ theme }) => theme.shadow.darkShadow};
   }
+  @media (min-width: 838px) {
+    width: 20rem;
+  }
+  /* @media (min-width: 1038px) {
+    width: 25rem;
+  } */
 `;
 const StyledTextArea = styled.textarea`
   padding: 0.5rem 0.9rem;
-  width: 80%;
+  width: 55%;
   margin: 0 auto;
   border-radius: ${({ theme }) => theme.borderRadius};
   display: block;
@@ -58,13 +63,16 @@ const StyledTextArea = styled.textarea`
     border: 2px solid ${({ theme }) => theme.colors.primaryColor};
     box-shadow: ${({ theme }) => theme.shadow.darkShadow};
   }
+  @media (min-width: 1238px) {
+    width: 60%;
+  }
 `;
 
 const ContactForm: React.FC<Props> = () => {
   return (
     <StyledContact>
       {' '}
-      <StyledForm>
+      <StyledForm method="POST" action="https://formspree.io/test123@gmail.com">
         <div className="head">
           <FormGroup>
             <StyledInput type="text" placeholder="name" />

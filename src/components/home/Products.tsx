@@ -36,6 +36,7 @@ const GET_PRODUCTS_QUERY = graphql`
           price
           image {
             fluid(maxHeight: 426) {
+              src
               ...GatsbyContentfulFluid
             }
           }

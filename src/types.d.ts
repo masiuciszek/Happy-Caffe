@@ -15,5 +15,7 @@ export type ProductType = {
 };
 
 export type FluidImg = {
-  src: string;
+  fluid: {
+    src: string;
+  };
 };

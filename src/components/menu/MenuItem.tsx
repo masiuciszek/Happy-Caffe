@@ -66,12 +66,12 @@ const StyledMenuItem = styled.section<StyledProps>`
 `;
 
 const MenuItem: React.FC<Props> = ({ item }) => {
+  console.log(item);
   return (
     <StyledMenuItem category={item.catecory}>
       <div className="head">
         <div className="img-wrapper">
-          <img src={item.iamge.fixed.src} alt="iamge" />
-          {/*<Img fixed={item.iamge.fixed} />*/}
+          <img src={item.iamge.fixed.src} alt="image" />
         </div>
         <h3>
           {item.title} <span>{item.price}$</span>

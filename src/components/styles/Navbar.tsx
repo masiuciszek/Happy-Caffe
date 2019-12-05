@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { MenuAltRight } from 'styled-icons/boxicons-regular';
+import { MenuAltRight, Cart } from 'styled-icons/boxicons-regular';
 import { CoffeeTogo } from 'styled-icons/boxicons-regular';
 import styled from 'styled-components';
 import links from '../../utils/mix';
@@ -61,11 +61,13 @@ export const NavList = styled.ul`
       transform: scale(1.07);
       color: ${({ theme }) => theme.colors.white};
     }
-    a {
+    a,
+    span {
       color: ${({ theme }) => theme.colors.black};
       font-size: 1.3rem;
       letter-spacing: 0.1rem;
       padding: 0.6rem;
+      cursor: pointer;
       transition: ${({ theme }) => theme.transition.quickTransition};
       &:hover {
         background: ${({ theme }) => theme.colors.black};
@@ -83,7 +85,8 @@ const MobileList = styled(NavList)`
   justify-content: center;
   align-items: center;
   li {
-    a {
+    a,
+    span {
       &:hover {
         transform: translateY(200px);
       }
@@ -121,6 +124,12 @@ const Navbar: React.FC<Props> = () => {
               <Link to={link.path}>{link.text}</Link>
             </li>
           ))}
+          <li>
+            {' '}
+            <span className="snipcart-checkout">
+              <Cart size="30" />
+            </span>
+          </li>
         </MobileList>
       )}
       <NavList>
@@ -129,6 +138,12 @@ const Navbar: React.FC<Props> = () => {
             <Link to={link.path}>{link.text}</Link>
           </li>
         ))}
+        <li>
+          {' '}
+          <span className="snipcart-checkout">
+            <Cart size="30" />
+          </span>
+        </li>
       </NavList>
     </StyledNav>
   );
