@@ -12,6 +12,8 @@ export const StyledBtn = styled.button<P>`
   transition: ${({ theme }) => theme.transition.mainTransition};
   cursor: pointer;
   box-shadow: ${({ theme }) => theme.shadow.lightShadow};
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
   &:hover {
     background: ${({ theme }) => theme.colors.primaryColor};
     color: ${({ theme }) => theme.colors.white};

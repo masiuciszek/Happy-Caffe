@@ -5,11 +5,7 @@ const links: { id: string; path: string; text: string }[] = [
     path: '/',
     text: 'home',
   },
-  {
-    id: uuid(),
-    path: '/info',
-    text: 'info',
-  },
+
   {
     id: uuid(),
     path: '/about',
