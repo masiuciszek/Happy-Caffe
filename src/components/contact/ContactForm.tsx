@@ -7,10 +7,14 @@ interface Props {}
 const StyledContact = styled.section`
   padding: 4rem 1rem;
   min-height: 66vh;
-  background: ${({ theme }) => theme.colors.secondary};
+  /* background: ${({ theme }) => theme.colors.secondary}; */
   display: flex;
   flex-direction: column;
   justify-content: center;
+  h4{
+    text-align:center;
+    font-size:2rem;
+  }
 `;
 const StyledForm = styled.form`
   .head {
@@ -84,7 +88,7 @@ const StyledTextArea = styled.textarea`
 const ContactForm: React.FC<Props> = () => {
   return (
     <StyledContact>
-      {' '}
+      <h4>Contact us</h4>
       <StyledForm method="POST" action="https://formspree.io/test123@gmail.com">
         <div className="head">
           <FormGroup>

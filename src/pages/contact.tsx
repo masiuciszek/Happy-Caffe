@@ -2,8 +2,8 @@ import * as React from 'react';
 import Layout from '../components/styles/layout';
 import ContactForm from '../components/contact/ContactForm';
 import Title from '../components/styles/Title';
-import styled from 'styled-components';
 import SEO from '../components/seo';
+import styled from 'styled-components';
 interface Props {}
 
 const StyledContactPage = styled.div`
@@ -13,15 +13,27 @@ const StyledContactPage = styled.div`
   }
 `;
 
+const StyledPage = styled.div`
+  h5 {
+    text-align: center;
+    font-size: 1.6rem;
+  }
+`;
+
 const ContactPage: React.FC<Props> = () => {
   return (
     <>
       <Layout>
-        <SEO title="contact page" />{' '}
-        <StyledContactPage>
-          <Title title="Contact Us" />
-          <ContactForm />
-        </StyledContactPage>
+        <StyledPage>
+          <SEO title="Contact" />{' '}
+          <StyledContactPage>
+            <Title
+              title="Happy Caffee"
+              subTitle="Would love to hear your words"
+            />
+            <ContactForm />
+          </StyledContactPage>
+        </StyledPage>
       </Layout>
     </>
   );

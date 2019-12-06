@@ -24,7 +24,7 @@ const MenuPage: React.FC<Props> = ({ data }) => {
       <Layout>
         <SEO title="Menu" />
         <PageWrapper>
-          <Title title="Our Menu" />
+          <Title title="Master Menu" />
           <Menu menuData={data.menu.edges} />
         </PageWrapper>
       </Layout>
