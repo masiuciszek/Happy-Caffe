@@ -19,11 +19,7 @@ const links: { id: string; path: string; text: string }[] = [
     path: '/menu',
     text: 'menu',
   },
-  {
-    id: uuid(),
-    path: '/gallery',
-    text: 'gallery',
-  },
+
   {
     id: uuid(),
     path: '/contact',
