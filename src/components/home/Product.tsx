@@ -37,6 +37,7 @@ const StyledProduct = styled.section`
       position: absolute;
       top: 50%;
       left: 50%;
+      width: 70%;
       transform: translate(-50%, -50%);
       background: ${({ theme }) => theme.colors.blackShadow};
       padding: 1.5rem 2rem;
@@ -48,12 +49,48 @@ const StyledProduct = styled.section`
       }
       button {
         width: 100%;
+        &:hover {
+          border: 2px solid ${({ theme }) => theme.colors.white};
+          background: ${({ theme }) => theme.colors.black};
+          color: ${({ theme }) => theme.colors.white};
+        }
       }
     }
   }
 
   .body {
     display: none;
+  }
+  @media (max-width: 975px) {
+    .body {
+      h3,
+      h4 {
+        font-size: 1.2rem;
+      }
+      height: 10rem;
+    }
+  }
+  @media (max-width: 730px) {
+    .body {
+      width: 100% !important;
+      h3,
+      h4 {
+        font-size: 0.9rem;
+      }
+      height: 10rem;
+      button {
+        font-size:1rem;
+      }
+    }
+  }
+  @media (max-width: 520px) {
+    .body {
+      background: none !important;
+      button {
+        font-size: .8rem;
+        padding: 0 0.5rem;
+      }
+
   }
 `;
 

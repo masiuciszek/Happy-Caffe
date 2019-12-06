@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Title from '../styles/Title';
 import { StaticQuery, graphql } from 'gatsby';
 import { ProductType } from '../../types';
+
 interface Props {
   // TODO : Fix prop type
   products: any;
@@ -12,7 +13,7 @@ interface Props {
 
 const StyledProducts = styled.section`
   padding: 4rem 2rem;
-
+  height: 100%;
   h3 {
   }
   h5 {

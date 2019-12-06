@@ -6,7 +6,7 @@ interface Props {}
 
 const StyledContact = styled.section`
   padding: 4rem 1rem;
-  min-height: 60vh;
+  min-height: 66vh;
   background: ${({ theme }) => theme.colors.secondary};
   display: flex;
   flex-direction: column;
@@ -40,14 +40,27 @@ const StyledInput = styled.input`
   &:focus {
     transform: scale(1.01);
     width: 32rem;
+
     box-shadow: ${({ theme }) => theme.shadow.darkShadow};
   }
   @media (min-width: 838px) {
     width: 20rem;
   }
-  /* @media (min-width: 1038px) {
-    width: 25rem;
-  } */
+  @media (max-width: 1038px) {
+    &:focus {
+      width: 28rem;
+    }
+  }
+  @media (max-width: 740px) {
+    &:focus {
+      width: 13rem;
+    }
+  }
+  @media (max-width: 440px) {
+    &:focus {
+      width: 9rem;
+    }
+  }
 `;
 const StyledTextArea = styled.textarea`
   padding: 0.5rem 0.9rem;

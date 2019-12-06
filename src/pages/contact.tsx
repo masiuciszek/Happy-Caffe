@@ -3,6 +3,7 @@ import Layout from '../components/styles/layout';
 import ContactForm from '../components/contact/ContactForm';
 import Title from '../components/styles/Title';
 import styled from 'styled-components';
+import SEO from '../components/seo';
 interface Props {}
 
 const StyledContactPage = styled.div`
@@ -16,7 +17,7 @@ const ContactPage: React.FC<Props> = () => {
   return (
     <>
       <Layout>
-        {' '}
+        <SEO title="contact page" />{' '}
         <StyledContactPage>
           <Title title="Contact Us" />
           <ContactForm />

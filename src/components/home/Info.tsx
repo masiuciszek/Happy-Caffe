@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import Title from '../styles/Title';
 import { StyledBtn } from '../styles/Buttons';
 
@@ -45,7 +45,9 @@ const Info: React.FC<Props> = ({ data }) => {
           cappuccino iced qui robusta redeye. Trifecta, cortado at french press
           rich robust trifecta grinder.
         </p>
-        <StyledBtn upper>About</StyledBtn>
+        <Link to="/contact">
+          <StyledBtn upper>Contact</StyledBtn>
+        </Link>
       </div>
     </StyledInfo>
   );

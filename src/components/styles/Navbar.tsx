@@ -3,7 +3,7 @@ import { MenuAltRight, Cart } from 'styled-icons/boxicons-regular';
 import { CoffeeTogo } from 'styled-icons/boxicons-regular';
 import styled from 'styled-components';
 import links from '../../utils/mix';
-import { Link } from 'gatsby';
+import AniLink from 'gatsby-plugin-transition-link/AniLink';
 import useToggle from '../../hooks/useToggle';
 import { fadeDown } from '../../utils/animations';
 interface Props {}
@@ -105,12 +105,12 @@ const Navbar: React.FC<Props> = () => {
       <div className="logo">
         <h3>
           Happy{' '}
-          <Link to="/">
+          <AniLink fade to="/">
             <span>
               {' '}
               <CoffeeTogo size="35" />{' '}
             </span>{' '}
-          </Link>
+          </AniLink>
           Caffe
         </h3>
       </div>
@@ -121,7 +121,7 @@ const Navbar: React.FC<Props> = () => {
         <MobileList>
           {links.map(link => (
             <li key={link.id}>
-              <Link to={link.path}>{link.text}</Link>
+              <AniLink to={link.path}>{link.text}</AniLink>
             </li>
           ))}
           <li>
@@ -135,7 +135,9 @@ const Navbar: React.FC<Props> = () => {
       <NavList>
         {links.map(link => (
           <li key={link.id}>
-            <Link to={link.path}>{link.text}</Link>
+            <AniLink fade to={link.path}>
+              {link.text}
+            </AniLink>
           </li>
         ))}
         <li>
