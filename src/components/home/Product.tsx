@@ -22,7 +22,7 @@ const StyledProduct = styled.section`
       background: linear-gradient(
         90deg,
         rgba(2, 0, 36, 0.6671043417366946) 16%,
-        rgba(191, 79, 6, 0.639093137254902) 47%,
+        rgba(1, 9, 6, 0.639093137254902) 47%,
         rgba(121, 56, 14, 0.5998774509803921) 100%
       );
       position: absolute;
@@ -57,7 +57,10 @@ const StyledProduct = styled.section`
       }
     }
   }
-
+  .small-price {
+    display: none;
+    transition: ${({ theme }) => theme.transition.mainTransition};
+  }
   .body {
     display: none;
   }
@@ -79,18 +82,44 @@ const StyledProduct = styled.section`
       }
       height: 10rem;
       button {
-        font-size:1rem;
+        font-size: 1rem;
       }
     }
   }
   @media (max-width: 520px) {
-    .body {
-      background: none !important;
-      button {
-        font-size: .8rem;
-        padding: 0 0.5rem;
+    position: relative;
+    &:hover {
+      .small-price {
+        display: inline-block;
+        display: flex;
+        justify-content: space-between;
+        h3,
+        h4 {
+          z-index: 5;
+          position: relative;
+          color: ${({ theme }) => theme.colors.white};
+          font-size: 1em;
+          padding: 0.3em;
+        }
       }
+    }
+    .body {
+      h3,
+      h4 {
+        display: none;
+      }
+      background: none !important;
 
+      button {
+        font-size: 0.8rem;
+        padding: 0 0.5rem;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, 0);
+        /* display: none; */
+      }
+    }
   }
 `;
 
@@ -115,6 +144,10 @@ const Product: React.FC<Props> = ({ product }) => {
         >
           Add to Cart
         </StyledBtn>
+      </div>
+      <div className="small-price">
+        <h3>{product.title}</h3>
+        <h4>{product.price}$</h4>
       </div>
     </StyledProduct>
   );

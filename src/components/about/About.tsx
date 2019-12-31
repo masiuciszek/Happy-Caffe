@@ -12,17 +12,33 @@ interface Props {
 }
 const StyledAbout = styled.section`
   padding: 4rem 1rem;
+
+  width: 80vw;
+  margin: 0 auto;
   .content {
     padding: 1.5rem 3rem;
-    width: 55rem;
     margin: 0 auto;
+    display: flex;
+    justify-content: center;
+
     article {
-      padding: 2rem 3rem;
+      width: 100%;
+
+      margin: 0 auto;
+      padding: 0.3rem 0.8rem;
       box-shadow: ${({ theme }) => theme.shadow.lightShadow};
       font-size: 1.1rem;
       line-height: 1.9rem;
       background: ${({ theme }) => theme.colors.blackShadow};
       color: ${({ theme }) => theme.colors.white};
+    }
+  }
+  @media (min-width: 999px) {
+    .content {
+      article {
+        padding: 2rem 3rem;
+        width: 80%;
+      }
     }
   }
 `;

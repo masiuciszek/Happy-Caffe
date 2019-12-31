@@ -13,12 +13,18 @@ interface Props {
 const StyledGrid = styled.div`
   padding: 4rem 0.5rem;
   display: grid;
-
   grid-gap: 16px;
+
   justify-items: center;
   grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
   @media (min-width: 1360px) {
     grid-template-columns: repeat(3, 1fr);
+  }
+  @media (max-width: 540px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 `;
 

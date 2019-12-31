@@ -52,8 +52,23 @@ const StyledMenuItem = styled.section<StyledProps>`
     width: 80%;
   }
   @media (max-width: 466px) {
-    width: 90%;
-    margin-right: 7rem;
+
+
+    /* margin-right: 15rem; */
+    /* margin: 0 auto; */
+  }
+  @media (max-width: 540px) {
+    width: 100%;
+    display: flex;
+    flex-direction:column;
+    padding: 0;
+    border: none;
+    margin: .5em 0;
+    h3{
+      margin-left: auto;
+      width: 100%;
+      text-align: right;
+    }
   }
   button {
     position: absolute;
@@ -79,7 +94,7 @@ const MenuItem: React.FC<Props> = ({ item }) => {
       </div>
 
       <div className="body">
-        <h4>CateGorey: {item.catecory}</h4>
+        <h4>{item.catecory}</h4>
         <p>{item.description.description}</p>
       </div>
     </StyledMenuItem>
